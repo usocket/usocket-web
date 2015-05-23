@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>USOCKET</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<div class="header">
+<h1>USOCKET</h1>
+</div>
+<h2>Comparison to "trivial-sockets"</h2>
+<p><em>usocket</em> supports more backends than <em>trivial-sockets</em>.
+
+The
+latter
+implements different feature-sets for different backends
+while the former supplies consistent functionality for all backends.</p>
+<div style="border: 3px solid black; margin: 0px; padding: 2px;">
+<table style="border: 1px solid black;" border="1" cellspacing="1">
+  <tbody>
+    <tr>
+      <th colspan="2">Feature</th>
+      <th colspan="8">In trivial-sockets?</th>
+      <th rowspan="2">In usocket?</th>
+    </tr>
+    <tr>
+      <th colspan="2"><br>
+      </th>
+      <th title="ArmedBear">ABCL</th>
+      <th title="Allegro">ACL</th>
+      <th>clisp</th>
+      <th>CMUCL</th>
+      <th>LispWorks</th>
+      <th>OpenMCL</th>
+      <th>SBCL</th>
+      <th>overall</th>
+    </tr>
+    <tr>
+      <th rowspan="3">Client side tcp streams</th>
+      <th>:element-type</th>
+      <td>Yes</td>
+<!-- ABCL --> <td title="bivalent streams">Yes*</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td title="bivalent streams">Yes*</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>:external-format</th>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>binding local interface/port</th>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Server socket creation</th>
+      <th>Binding specific local port</th>
+      <td colspan="9">Yes</td>
+    </tr>
+    <tr>
+      <th>Binding specific local interface</th>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>Selectable backlog length</th>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>reuse-address</th>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No*</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No*</td>
+      <td>Yes*</td>
+    </tr>
+    <tr>
+      <th>:element-type for created connections</th>
+      <td colspan="8">No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th rowspan="5">Accepting connections</th>
+      <th>:element-type for created stream</th>
+      <td>Yes</td>
+      <td>Yes*</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes*</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes*</td>
+    </tr>
+    <tr>
+      <th>:external-format for created stream</th>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>In summary: there are only a very limited number of features you can
+depend
+on to work on all platforms supported by trivial-sockets. While usocket
+doesn't support all features, you can depend on the features to be
+available.
+</p>
+<hr>
+<div style="float: left; font-size: x-small; font-weight: bold;">Back
+to <a href="http://common-lisp.net/">Common-lisp.net</a>.
+</div>
+<div class="check" style="float: right;"> <a
+ href="http://validator.w3.org/check/referer">Valid XHTML 1.0 Strict</a>
+</div>
+</body>
+</html>

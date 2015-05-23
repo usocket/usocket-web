@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>USOCKET</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<div class="header">
+<h1>USOCKET</h1>
+</div>
+<h2>Supported implementations comparison</h2>
+<p>Different projects aim at providing TCP/IP sockets portably
+across Common Lisp implementations. The table below summarizes
+the state of several of these libraries.</p>
+<table>
+  <caption>Supported implementations comparison</caption> <thead><tr>
+    <th>Implementation</th>
+    <th>trivial-sockets</th>
+    <th>ACL-COMPAT</th>
+    <th>s-sysdeps</th>
+    <th>usocket</th>
+    <th>kmrcl</th>
+    <th>IOLib</th>
+  </tr>
+  </thead> <tbody>
+    <tr>
+      <th>SBCL</th>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>CMUCL</th>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+    </tr>
+    <tr style="background-color: rgb(238, 238, 255);">
+      <th>ArmedBear</th>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>clisp</th>
+      <td>yes</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>Allegro</th>
+      <td>yes</td>
+      <td>not relevant</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>no</td>
+    </tr>
+    <tr style="background-color: rgb(238, 238, 255);">
+      <th>LispWorks</th>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>OpenMCL</th>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>ECL</th>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr style="background-color: rgb(238, 238, 255);">
+      <th>Scieneer</th>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>GCL</th>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td>no (to come)</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>Corman</th>
+      <td>no</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>no (to come)</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>Digitool MCL</th>
+      <td>no</td>
+      <td>no</td>
+      <td>no</td>
+      <td style="color: rgb(255, 0, 0);">yes</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr style="background-color: rgb(238, 255, 238);">
+      <th>Total #</th>
+      <td>8</td>
+      <td>7(+1)</td>
+      <td>4</td>
+      <td style="color: rgb(255, 0, 0);">10</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<div style="float: left; font-size: x-small; font-weight: bold;">Back
+to <a href="http://common-lisp.net/">Common-lisp.net</a>.
+</div>
+<div class="check" style="float: right;"> <a
+ href="http://validator.w3.org/check/referer">Valid XHTML 1.0 Strict</a>
+</div>
+</body>
+</html>

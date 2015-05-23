@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>USOCKET</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+  </head>
+  <body>
+    <div class="header">
+      <h1>USOCKET - Universal socket library for Common Lisp<br>
+      </h1>
+    </div>
+    <ul>
+      <li><a href="#goal">Goal</a></li>
+      <li><a href="#documentation">Documentation</a></li>
+      <li><a href="api-docs.shtml#faqs"><i>FAQ</i></a></li>
+      <li><a href="#implementations">Supported implementations</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#development">Development</a></li>
+      <li><a href="#guarantees">Interface guarantees</a></li>
+      <li><a href="#releases">Releases</a></li>
+      <li><a href="#history">Project history</a></li>
+    </ul>
+    <h2><a name="goal">Goal</a></h2>
+    <p>The project wants to provide a portable TCP/IP and UDP/IP socket
+      interface for as many Common Lisp implementations as possible,
+      while keeping the abstraction and portability layer as thin as
+      possible. (IPv6 support is also in progress and already available
+      for SBCL/CCL with version 0.6.3+)<br>
+    </p>
+    <p>Because <a href="http://cliki.net/trivial-sockets">trivial-sockets</a>
+      has been declared dead and its author has said he will declare
+      usocket its successor if there is a zero effort path of migration,
+      I'm <b>also working on <em>trivial-usocket</em></b> which is
+      supposed to be a sub-optimal, but zero effort migration from
+      trivial-sockets.</p>
+    <p>If your lisp isn't mentioned in the list below, please feel free
+      to submit a request for it at the mailing list mentioned below.</p>
+    <h3>Comparison to other socket libraries</h3>
+    <p>Since usocket is effectively the successor to trivial-sockets,
+      see the <a href="feature-comparison.shtml">feature comparison</a>
+      with trivial-sockets in order to find out which one you should
+      use.</p>
+    <p>After starting the project, many others turned out to have worked
+      on something alike, many times as part of a broader project or
+      library. Some of them were known at the start of this project,
+      others have been conceived after the usocket project already
+      started. Not all of them have exactly the same portability goal.</p>
+    <p>See the <a href="implementation-comparison.shtml">Implementation
+        comparison</a> page for a comparison of the portability of other
+      libraries and how that relates to usocket.</p>
+    <h2><a name="documentation">Documentation</a></h2>
+    <p>See the documentation page for the <a href="./api-docs.shtml">API
+
+
+        description</a>.</p>
+    <h2><a name="implementations">Supported implementations</a></h2>
+    <p>Currently these implementations are supported:</p>
+    <ul>
+      <li><a href="http://www.franz.com/products/allegro-common-lisp/">Allegro
+
+          CL</a></li>
+      <li><a href="http://common-lisp.net/project/armedbear/">ABCL </a>(ArmedBear)</li>
+      <li><a href="http://ccl.clozure.com">Clozure CL</a> (aka OpenMCL)</li>
+      <li>GNU <a href="http://www.clisp.org">CLISP</a></li>
+      <li><a href="http://www.cons.org/cmucl">CMUCL</a></li>
+      <li><a href="http://ecls.sf.net">ECL</a></li>
+      <li><a href="http://www.lispworks.com/products/lispworks.html">LispWorks</a>
+        (4.3 and up)</li>
+      <li>Digitool <a href="http://code.google.com/p/mcl/">MCL</a> (5.0
+        and up)</li>
+      <li><a href="http://wukix.com/mocl">MOCL</a></li>
+      <li><a href="http://www.sbcl.org">SBCL</a></li>
+      <li><a href="http://www.scieneer.com/scl/">Scieneer CL</a></li>
+    </ul>
+    <h2><a name="community">Community</a></h2>
+    <p>This project has started January 2006. There isn't much of a
+      community yet, though I'd like there to be one. So, you're invited
+      to join the mailing list, announce yourself and even join the
+      effort! </p>
+    <p>Development discussion takes place on <a
+        href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">usocket-devel@common-lisp.net</a>.
+    </p>
+    <p>Project tracking happens on <a
+        href="https://github.com/usocket/usocket">GitHub</a>. Please
+      take note of the guidelines before entering a bug or enhancement
+      request into the database.</p>
+    <div class="roadmap">
+      <h2><a name="development">Development</a></h2>
+      <p>Development will at least follow the steps outlined below. Yet
+        to be determined is whether the currently mentioned steps will
+        be enough to release version 1.0. Possibly, UDP sockets remain
+        to be addressed before doing 1.0; that will depend on your
+        reactions :-) </p>
+      <p>The targeted implementations listed in the status table below
+        are not a final list: others can be added if/when the need or
+        interest arises. </p>
+      <p><a href="https://github.com/usocket/usocket">Active development</a>
+        is taking place on GitHub. To be kept up to date, please <a
+          href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">subscribe
+
+
+          to the development mailing list</a>. To use the latest
+        development version, make sure you have <a
+          href="http://git-scm.com/">git</a> installed and execute this
+        command: </p>
+      <pre> $ git clone https://github.com/usocket/usocket.git<br>  </pre>
+      <p>Please send patches, bug reports and suggestions to the
+        development mailing list address given above. The table below
+        indicates the current state of development. </p>
+      <table style="font-size: small;" rules="all" border="1"
+        cellpadding="3">
+        <caption style="font-weight: bold; font-size: large;">Status for
+          the currently targeted backends</caption> <thead
+          class="roadmap-head"> <tr>
+            <th colspan="2">Major steps</th>
+            <th colspan="10">Socket implementations</th>
+          </tr>
+          <tr>
+            <th><br>
+            </th>
+            <th>Minor steps</th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fsb-bsd-sockets.txt&amp;rev=0&amp;sc=0">SBCL</a></th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fcmucl-sockets.txt&amp;rev=0&amp;sc=0">CMUCL</a></th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fabcl-socket.txt&amp;rev=0&amp;sc=0">ABCL</a></th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fclisp-sockets.txt&amp;rev=0&amp;sc=0">CLISP</a></th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fallegro-socket.txt&amp;rev=0&amp;sc=0">Allegro
+
+
+                <br>
+              </a></th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Flw-sockets.txt&amp;rev=0&amp;sc=0">LispWorks</a></th>
+            <th><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fopenmcl-sockets.txt&amp;rev=0&amp;sc=0">CCL</a></th>
+            <th>ECL</th>
+            <th>Scieneer</th>
+            <th>MCL </th>
+          </tr>
+        </thead> <tbody>
+          <tr style="border-color: rgb(0, 0, 0); border-width: 2px;">
+            <td rowspan="5">Minimal active sockets support at the same
+              level as provided by <a
+                href="http://cliki.net/trivial-sockets">trivial-sockets</a>.<br>
+              (Meaning streamed tcp traffic on connected sockets.)</td>
+            <td><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Factive-sockets-apis.txt&amp;rev=0&amp;sc=0">Investigate
+
+
+
+
+
+
+
+                interfaces provided.</a></td>
+            <td class="DONE">DONE</td>
+            <!-- SBCL --> <td class="DONE">DONE</td>
+            <!-- CMUCL --> <td class="DONE">DONE</td>
+            <!-- ABCL --> <td class="DONE">DONE</td>
+            <!-- clisp --> <td class="DONE">DONE</td>
+            <!-- Allegro --> <td class="DONE">DONE</td>
+            <!-- LispWorks --> <td class="DONE">DONE</td>
+            <!-- OpenMCL --> <td class="DONE">DONE</td>
+            <!-- ECL --> <td class="DONE">DONE</td>
+            <td style="vertical-align: top; background-color: rgb(0,
+              153, 0);">DONE<br>
+            </td>
+            <!-- Scieneer --> </tr>
+          <tr>
+            <td>Identify socket errors generated.</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="No specific errors available">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE" title="Implemented">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implement active socket support.</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implement remapping of implementation defined errors.</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implementation test-suite status</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="DONE">PASS</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Add functions to retrieve socket properties:<br>
+              Local and remote IP address and port.</td>
+            <td><a
+href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Faddress-apis.txt&amp;rev=0&amp;sc=0">Investigate
+
+
+
+
+
+
+
+                interfaces provided</a></td>
+            <td class="DONE">DONE</td>
+            <!-- SBCL --> <td class="DONE">DONE</td>
+            <!-- CMUCL --> <td class="DONE">DONE</td>
+            <!-- ABCL --> <td class="DONE">DONE</td>
+            <!-- clisp --> <td class="DONE">DONE</td>
+            <!-- Allegro --> <td class="DONE">DONE</td>
+            <!-- LispWorks --> <td class="DONE">DONE</td>
+            <!-- OpenMCL --> <td class="DONE">DONE</td>
+            <!-- ECL --> <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <!-- Scieneer --> </tr>
+          <tr>
+            <td>Implement it.</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implementation test-suite status</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="PASS">PASS</td>
+            <td class="DONE">PASS</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Add support for passive
+              (connection-accepting/server) sockets.</td>
+            <td>Investigate interfaces provided</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implement api calls listen and accept</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implement api calls get- and setsockopt (or equivalent).</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Implement efficient waiting for multiple
+              sockets in one function call (select() like behavior).</td>
+            <td><a
+                href="http://trac.common-lisp.net/usocket/wiki/SocketSelect">Investigate
+
+
+
+
+
+
+
+                interfaces provided</a></td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Implement wait-for-input api.</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Implement more uncommon API calls for TCP
+              streams.</td>
+            <td>send, recv</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+            <td class="TODO">TODO</td>
+          </tr>
+          <tr>
+            <td>shutdown</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+            <td class="WIP">WIP</td>
+          </tr>
+          <tr>
+            <td rowspan="2">Implement UDP socket support.</td>
+            <td><a
+                href="http://trac.common-lisp.net/usocket/wiki/DatagramSockets">Investigate
+
+
+
+
+
+
+
+                API's provided</a></td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td>Build on top of that (or custom ffi).</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+            <td class="DONE">DONE</td>
+          </tr>
+          <tr>
+            <td valign="top">Implement IPv6 support<br>
+            </td>
+            <td valign="top">Implementation on platforms other than
+              SBCL/CCL; API polish<br>
+            </td>
+            <td valign="top" bgcolor="#009900">DONE<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP 2<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP 2<br>
+            </td>
+            <td valign="top" bgcolor="#009900">DONE<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP<br>
+            </td>
+            <td valign="top" bgcolor="#ff6600">WIP<br>
+            </td>
+            <td valign="top" bgcolor="#ff0000">N/A<br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2><a name="guarantees">Interface guarantees</a></h2>
+    <p>The interfaces currently published in the :export part of the
+      package definition are guaranteed to stay compatible for the
+      entire 0.x lifecycle. Extention in a backward compatible way is of
+      course valid, as is the addition of new interface functions.</p>
+    <h2><a name="releases">Releases</a></h2>
+    <h3>Current release</h3>
+    <p>Releases are uploaded to the <a href="releases/">releases/</a>
+      directory. You can find short descriptions in the table below:</p>
+    <table>
+      <caption><b>USOCKET Release History</b></caption> <tbody>
+        <tr>
+          <th>Date</th>
+          <th>Release</th>
+          <th>Summary</th>
+        </tr>
+        <tr>
+          <td valign="top">May 23, 2015<br>
+          </td>
+          <td valign="top">0.6.3<br>
+          </td>
+          <td valign="top">Further CCL 1.11 compatibility; minor fixes
+            for ECL; improved SOCKET-SEND and SOCKET-RECEIVE on
+            LispWorks<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Apr 20, 2015<br>
+          </td>
+          <td valign="top">0.6.2<br>
+          </td>
+          <td valign="top">CCL 1.11 compatibility; minor fixes for ECL
+            and LispWorks.<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Jun 21, 2013<br>
+          </td>
+          <td valign="top">0.6.1<br>
+          </td>
+          <td valign="top">Initial <b>MOCL</b> support; initial MCL UDP
+            support; improved SOCKET-OPTION; bugfix for CCL backend.<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Dec 26, 2012<br>
+          </td>
+          <td valign="top"><b>0.6.0</b><br>
+          </td>
+          <td valign="top"><b>New API: SOCKET-OPTION</b>; Add support
+            for ECL DFFI mode; bugfix for LispWorks, CLISP, ABCL, ECL.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Feb 27, 2012<br>
+          </td>
+          <td style="vertical-align: top;">0.5.5<br>
+          </td>
+          <td style="vertical-align: top;">LispWorks 6.1 compatibility;
+            SOCKET-CONNECT argument :nodelay can now set to
+            :if-supported<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Oct 1, 2011<br>
+          </td>
+          <td style="vertical-align: top;">0.5.4<br>
+          </td>
+          <td style="vertical-align: top;">Minor fixes for ECL, Allegro
+            CL modern mode, and SBCL.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Aug 13, 2011<br>
+          </td>
+          <td style="vertical-align: top;">0.5.3<br>
+          </td>
+          <td style="vertical-align: top;">Fixed "SBCL data flush
+            problem"; Important fixes for MCL and LispWorks (delivery
+            mode).<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">May 11, 2011<br>
+          </td>
+          <td style="vertical-align: top;">0.5.2<br>
+          </td>
+          <td style="vertical-align: top;">Fixed WAIT-FOR-INPUT for
+            CLISP which made Hunchentoot working; Lots of bugfix for
+            SBCL, ECL, ABCL and LispWorks.<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">Apr 2, 2011<br>
+          </td>
+          <td style="vertical-align: top;">0.5.1<br>
+          </td>
+          <td style="vertical-align: top;"><span style="font-weight:
+              bold;">Improved CLISP support using FFI;</span> Lots of
+            bugfix for CMUCL, SBCL, LispWorks, etc.<br>
+          </td>
+        </tr>
+        <tr>
+          <td>Mar&nbsp;12,&nbsp;2011</td>
+          <td style="font-weight: bold;">0.5.0</td>
+          <td><b>UDP support;</b> Lots of bugfixes since 0.4.1; support
+            for WAIT-FOR-INPUT for SBCL and ECL on Win32; new platform
+            added: Macintosh Common Lisp (5.0 and up)</td>
+        </tr>
+        <tr>
+          <td>Dec&nbsp;27,&nbsp;2008</td>
+          <td>0.4.1</td>
+          <td>fixes for ECL, LispWorks, SBCL, SCL</td>
+        </tr>
+        <tr>
+          <td>Oct&nbsp;28,&nbsp;2008</td>
+          <td><b>0.4.0</b></td>
+          <td><b>select()-like api</b>: make a single thread wait for
+            multiple sockets.<br>
+            <b>various socket options</b> for socket-creation with
+            SOCKET-CONNECT. </td>
+        </tr>
+        <tr>
+          <td>Jun&nbsp;21,&nbsp;2008</td>
+          <td>0.3.6</td>
+          <td>Code fixups based on advice from the ECL and OpenMCL
+            maintainers. New exported symbols: WITH-MAPPED-CONDITIONS,
+            NS-CONDITION, NS-ERROR, NS-UNKNOWN-ERROR and
+            NS-UNKNOWN-CONDITION.</td>
+        </tr>
+        <tr>
+          <td>Jul&nbsp;25,&nbsp;2007</td>
+          <td>0.3.4</td>
+          <td>Fix clisp get-host-name, multiple ECL fixes.</td>
+        </tr>
+        <tr>
+          <td>Jun&nbsp;05,&nbsp;2007</td>
+          <td>0.3.3</td>
+          <td>Fix where host resolution routine was unable to resolve
+            would return NIL instead of erroring.</td>
+        </tr>
+        <tr>
+          <td>Mar&nbsp;04,&nbsp;2007</td>
+          <td>0.3.2</td>
+          <td>Fixes for many backends related to closing sockets.
+            LispWorks fix for broken server sockets. API guarantee
+            adjustments in preparation of porting Drakma.</td>
+        </tr>
+        <tr>
+          <td>Feb&nbsp;28,&nbsp;2007</td>
+          <td>0.3.1</td>
+          <td>fixed with-server-socket; prevent creation of invalid
+            sockets; 2 more convenience macros.</td>
+        </tr>
+        <tr>
+          <td>Feb&nbsp;26,&nbsp;2007</td>
+          <td>re-release</td>
+          <td>Re-release of 0.2.3, 0.2.4, 0.2.5 and 0.3.0 tarballs
+            because the originals included Subversion administration
+            areas.</td>
+        </tr>
+        <tr>
+          <td>Jan&nbsp;21,&nbsp;2007</td>
+          <td><b>0.3.0</b></td>
+          <td><b>Server sockets</b></td>
+        </tr>
+        <tr>
+          <td>Jan&nbsp;19,&nbsp;2007</td>
+          <td>0.2.5</td>
+          <td>Allegro compilation fix.</td>
+        </tr>
+        <tr>
+          <td>Jan&nbsp;17,&nbsp;2007</td>
+          <td>0.2.4</td>
+          <td>Various fixes for CMUCL, OpenMCL, Allegro and LispWorks. </td>
+        </tr>
+        <tr>
+          <td>Jan&nbsp;04,&nbsp;2007</td>
+          <td>0.2.3</td>
+          <td>Add :element-type support to support stacking
+            flexi-streams on socket streams for portable
+            :external-format support.</td>
+        </tr>
+        <tr>
+          <td>Jan&nbsp;03,&nbsp;2007</td>
+          <td>0.2.2</td>
+          <td>Add ECL support and a small SBCL bugfix.</td>
+        </tr>
+        <tr>
+          <td>Dec&nbsp;21,&nbsp;2006</td>
+          <td>0.2.1</td>
+          <td>Remove 'open-stream' interface which is supposed to be
+            provided by the 'trivial-usocket' package.</td>
+        </tr>
+        <tr>
+          <td>Dec&nbsp;18,&nbsp;2006</td>
+          <td><b>0.2.0</b></td>
+          <td>Add support for <a
+              href="http://www.scieneer.com/scl/index.html">Scieneer
+              Common Lisp</a>, fix <a
+              href="http://trac.common-lisp.net/usocket/ticket/6">issue
+              #6</a> and API preparation for server side sockets (not in
+            this release)</td>
+        </tr>
+        <tr>
+          <td>Feb&nbsp;13,&nbsp;2006</td>
+          <td>0.1.0</td>
+          <td>Initial release</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2><a name="history">Project History</a></h2>
+    <p>Long ago the project was conceived and started by Erik Enge in an
+      attempt to factor out all implementation specific sockets code
+      from <a href="/project/cl-irc">cl-irc</a>. This 'long ago' must
+      have been way before 2003 when I entered the cl-irc project.</p>
+    <p>In January 2006, Erik Huelsmann found Erik Enge willing to donate
+      the code he had still laying around to restart the project. The
+      restart took place at the 27th of January when the old code was
+      imported into the public repository.<br>
+    </p>
+    <p>Starting from 2008, Chun Tian (binghe) joined into usocket
+      development team with his UDP code base.<br>
+    </p>
+    <p>With 0.6.0 release, this project, where it started as an
+      intersection of the functionality available on different
+      platforms, now slowly moving to the union of all functionality
+      available on all different implementations.<br>
+    </p>
+    <p>With 0.6.2 release, Hans Huebner added basic IPv6 support for
+      SBCL and Clozure CL, based on the IPv6 feature provided new
+      versions of SBCL/CCL.<br>
+    </p>
+    <hr>
+    <div style="float: left; font-size: x-small; font-weight: bold;">Back
+to
+
+
+
+
+
+
+
+
+
+
+      <a href="http://common-lisp.net/">Common-lisp.net</a>. </div>
+    <div class="check" style="float: right;"> <a
+        href="http://validator.w3.org/check/referer">Valid XHTML 1.0
+        Strict</a> </div>
+  </body>
+</html>
