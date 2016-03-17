@@ -67,7 +67,7 @@
       <li><a href="http://ccl.clozure.com">Clozure CL</a> (aka OpenMCL)</li>
       <li>GNU <a href="http://www.clisp.org">CLISP</a></li>
       <li><a href="http://www.cons.org/cmucl">CMUCL</a></li>
-      <li><a href="http://ecls.sf.net">ECL</a></li>
+      <li><a href="https://common-lisp.net/project/ecl/">ECL</a></li>
       <li><a href="http://www.lispworks.com/products/lispworks.html">LispWorks</a>
         (4.3 and up)</li>
       <li>Digitool <a href="http://code.google.com/p/mcl/">MCL</a> (5.0
