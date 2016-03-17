@@ -54,11 +54,13 @@
     <p>See the documentation page for the <a href="./api-docs.shtml">API
 
 
+
         description</a>.</p>
     <h2><a name="implementations">Supported implementations</a></h2>
     <p>Currently these implementations are supported:</p>
     <ul>
       <li><a href="http://www.franz.com/products/allegro-common-lisp/">Allegro
+
 
           CL</a></li>
       <li><a href="http://common-lisp.net/project/armedbear/">ABCL </a>(ArmedBear)</li>
@@ -101,6 +103,7 @@
           href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">subscribe
 
 
+
           to the development mailing list</a>. To use the latest
         development version, make sure you have <a
           href="http://git-scm.com/">git</a> installed and execute this
@@ -109,11 +112,9 @@
       <p>Please send patches, bug reports and suggestions to the
         development mailing list address given above. The table below
         indicates the current state of development. </p>
-      <table style="font-size: small;" rules="all" border="1"
-        cellpadding="3">
+      <table style="font-size: small;" rules="all" border="1" cellpadding="3">
         <caption style="font-weight: bold; font-size: large;">Status for
-          the currently targeted backends</caption> <thead
-          class="roadmap-head"> <tr>
+          the currently targeted backends</caption> <thead class="roadmap-head"> <tr>
             <th colspan="2">Major steps</th>
             <th colspan="10">Socket implementations</th>
           </tr>
@@ -121,24 +122,17 @@
             <th><br>
             </th>
             <th>Minor steps</th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fsb-bsd-sockets.txt&amp;rev=0&amp;sc=0">SBCL</a></th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fcmucl-sockets.txt&amp;rev=0&amp;sc=0">CMUCL</a></th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fabcl-socket.txt&amp;rev=0&amp;sc=0">ABCL</a></th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fclisp-sockets.txt&amp;rev=0&amp;sc=0">CLISP</a></th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fallegro-socket.txt&amp;rev=0&amp;sc=0">Allegro
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fsb-bsd-sockets.txt&amp;rev=0&amp;sc=0">SBCL</a></th>
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fcmucl-sockets.txt&amp;rev=0&amp;sc=0">CMUCL</a></th>
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fabcl-socket.txt&amp;rev=0&amp;sc=0">ABCL</a></th>
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fclisp-sockets.txt&amp;rev=0&amp;sc=0">CLISP</a></th>
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fallegro-socket.txt&amp;rev=0&amp;sc=0">Allegro
 
 
                 <br>
               </a></th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Flw-sockets.txt&amp;rev=0&amp;sc=0">LispWorks</a></th>
-            <th><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fopenmcl-sockets.txt&amp;rev=0&amp;sc=0">CCL</a></th>
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Flw-sockets.txt&amp;rev=0&amp;sc=0">LispWorks</a></th>
+            <th><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Fopenmcl-sockets.txt&amp;rev=0&amp;sc=0">CCL</a></th>
             <th>ECL</th>
             <th>Scieneer</th>
             <th>MCL </th>
@@ -146,11 +140,9 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
         </thead> <tbody>
           <tr style="border-color: rgb(0, 0, 0); border-width: 2px;">
             <td rowspan="5">Minimal active sockets support at the same
-              level as provided by <a
-                href="http://cliki.net/trivial-sockets">trivial-sockets</a>.<br>
+              level as provided by <a href="http://cliki.net/trivial-sockets">trivial-sockets</a>.<br>
               (Meaning streamed tcp traffic on connected sockets.)</td>
-            <td><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Factive-sockets-apis.txt&amp;rev=0&amp;sc=0">Investigate
+            <td><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Factive-sockets-apis.txt&amp;rev=0&amp;sc=0">Investigate
 
 
 
@@ -227,8 +219,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           <tr>
             <td rowspan="3">Add functions to retrieve socket properties:<br>
               Local and remote IP address and port.</td>
-            <td><a
-href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Faddress-apis.txt&amp;rev=0&amp;sc=0">Investigate
+            <td><a href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Faddress-apis.txt&amp;rev=0&amp;sc=0">Investigate
 
 
 
@@ -318,8 +309,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           <tr>
             <td rowspan="2">Implement efficient waiting for multiple
               sockets in one function call (select() like behavior).</td>
-            <td><a
-                href="http://trac.common-lisp.net/usocket/wiki/SocketSelect">Investigate
+            <td><a href="http://trac.common-lisp.net/usocket/wiki/SocketSelect">Investigate
 
 
 
@@ -382,8 +372,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           </tr>
           <tr>
             <td rowspan="2">Implement UDP socket support.</td>
-            <td><a
-                href="http://trac.common-lisp.net/usocket/wiki/DatagramSockets">Investigate
+            <td><a href="http://trac.common-lisp.net/usocket/wiki/DatagramSockets">Investigate
 
 
 
@@ -462,7 +451,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           <th>Release</th>
           <th>Summary</th>
         </tr>
-        <tr>
+        <tr><td valign="top">Mar 17, 2016<br></td><td valign="top">0.6.4<br></td><td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b> support for SBCL (and Clozure CL); minimal support for <b>Corman Lisp</b>; minor fixes for LW, SBCL, ECL.<br></td></tr><tr>
           <td valign="top">May 23, 2015<br>
           </td>
           <td valign="top">0.6.3<br>
@@ -643,10 +632,8 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
         <tr>
           <td>Dec&nbsp;18,&nbsp;2006</td>
           <td><b>0.2.0</b></td>
-          <td>Add support for <a
-              href="http://www.scieneer.com/scl/index.html">Scieneer
-              Common Lisp</a>, fix <a
-              href="http://trac.common-lisp.net/usocket/ticket/6">issue
+          <td>Add support for <a href="http://www.scieneer.com/scl/index.html">Scieneer
+              Common Lisp</a>, fix <a href="http://trac.common-lisp.net/usocket/ticket/6">issue
               #6</a> and API preparation for server side sockets (not in
             this release)</td>
         </tr>
@@ -693,8 +680,8 @@ to
 
 
       <a href="http://common-lisp.net/">Common-lisp.net</a>. </div>
-    <div class="check" style="float: right;"> <a
-        href="http://validator.w3.org/check/referer">Valid XHTML 1.0
+    <div class="check" style="float: right;"> <a href="http://validator.w3.org/check/referer">Valid XHTML 1.0
         Strict</a> </div>
-  </body>
-</html>
+  
+
+</body></html>
