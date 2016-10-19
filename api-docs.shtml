@@ -4,7 +4,7 @@
     <title>USOCKET API documentation</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta http-equiv="Content-Type" content="text/html;
-      charset=ISO-8859-1">
+      charset=windows-1252">
     <style type="text/css">
 dt.sym {
   font-weight: normal;
@@ -47,13 +47,11 @@ pre {
       <dt>Specification of a <em>host</em> or <em>local-host</em>
         parameter</dt>
       <dd>A <em>host</em> or <em>local-host</em> parameter may be any
-        one
-        of
+        one of
         <ul>
           <li>32-bit positive integer,</li>
           <li>A four element integer list representing IPv4 address,
-            i.e.
-            #(127 0 0 1)<br>
+            i.e. #(127 0 0 1)<br>
           </li>
           <li>a string containing an IP addres in dotted notation, or</li>
           <li> a host name to be resolved through DNS lookup.</li>
@@ -63,40 +61,29 @@ pre {
     <h2>Functions for socket creation and manipulation</h2>
     <dl>
       <dt class="sym"><span class="function-name"><a
-            name="socket-connect">socket-connect</a></span>
-        host port &amp;key protocol element-type timeout deadline
-        nodelay
+            name="socket-connect">socket-connect</a></span> host port
+        &amp;key protocol element-type timeout deadline nodelay
         local-host local-port =&gt; socket</dt>
       <dd>
         <p>Creates a TCP (stream) or UDP (datagram) socket to the <em>host</em>
-          and <em>port</em> specified. The return value is
-          a socket object of class <em><a href="#stream-usocket">stream-usocket</a></em>,
+          and <em>port</em> specified. The return value is a socket
+          object of class <em><a href="#stream-usocket">stream-usocket</a></em>,
           or <a href="#datagram-usocket"><em>datagram-usocket</em></a>.</p>
         <p><em>protocol</em> should be <code>:stream</code> (default)
-          or <code>:datagram</code>,
-          which
-          means
-          TCP
-          or
-          UDP <cite>(Start from USOCKET 0.5)</cite><br>
-          <em>element-type</em> argument is used in the
-          construction of the associated stream, i.e. <code>'character</code>
-          or <code>'(unsigned-byte 8)</code>, only used by TCP.<br>
+          or <code>:datagram</code>, which means TCP or UDP <cite>(Start
+            from USOCKET 0.5)</cite><br>
+          <em>element-type</em> argument is used in the construction of
+          the associated stream, i.e. <code>'character</code> or <code>'(unsigned-byte
+            8)</code>, only used by TCP.<br>
           <em>timeout</em> is a integer, it represents the socket option
-          <code>SO_RCVTIMEO</code>
-          (read timeout), in seconds.<br>
+          <code>SO_RCVTIMEO</code> (read timeout), in seconds.<br>
           <em>deadline</em> is only supported in Clozure CL and Digitool
-          MCL,
-          look up their documents please.<br>
+          MCL, look up their documents please.<br>
           <em>local-host</em> and <em>local-port</em>, when specified,
-          will
-          cause the socket calling bind() on local address. This is
-          useful for
-          selecting interfaces to send, or listening on UDP port. Note:
-          use only
-          one of them are allowed when reasonable (listen on wildcard
-          address, or
-          bind to random free port). <br>
+          will cause the socket calling bind() on local address. This is
+          useful for selecting interfaces to send, or listening on UDP
+          port. Note: use only one of them are allowed when reasonable
+          (listen on wildcard address, or bind to random free port). <br>
         </p>
       </dd>
       <dd>
@@ -124,44 +111,34 @@ pre {
         <br>
       </dd>
       <dt class="sym"> <span class="function-name"><a
-            name="socket-listen"></a>socket-listen</span>
-        host port &amp;key reuse-address backlog element-type =&gt;
-        socket</dt>
+            name="socket-listen"></a>socket-listen</span> host port
+        &amp;key reuse-address backlog element-type =&gt; socket</dt>
       <dd>
         <p>Creates and returns a passive ("server") socket associated
-          with <em>host</em>
-          and <em>port</em>. The object returned is of subtype <a
-            href="#stream-server-usocket">stream-server-usocket</a>.</p>
+          with <em>host</em> and <em>port</em>. The object returned is
+          of subtype <a href="#stream-server-usocket">stream-server-usocket</a>.</p>
         <p><em>host</em> names a local interface.<br>
           <em>port</em> names a local port, or 0 (zero) to request a
-          random
-          free port.<br>
+          random free port.<br>
           <em>reuse-address</em> is a boolean (t, nil) value signalling
-          reuse
-          of the address is requested (or not).<br>
+          reuse of the address is requested (or not).<br>
           <em>backlog</em> is the length of the queue containing
-          connections
-          which haven't actually been accepted yet.<br>
+          connections which haven't actually been accepted yet.<br>
           <em>element-type</em> is the default element type used for
-          sockets
-          created by socket-accept. <em>character</em> is the default
-          when it's
-          not explicitly provided. </p>
+          sockets created by socket-accept. <em>character</em> is the
+          default when it's not explicitly provided. </p>
       </dd>
       <dt class="sym"><span class="function-name"><a
-            name="socket-accept">socket-accept</a></span>
-        socket &amp;key element-type =&gt; new-socket</dt>
+            name="socket-accept">socket-accept</a></span> socket
+        &amp;key element-type =&gt; new-socket</dt>
       <dd>
         <p>Creates and returns an active ("connected") stream socket <em>new-socket</em>
           from the <em>socket</em> passed. The return value is a socket
-          object
-          of class <em><a href="#stream-usocket">stream-usocket</a></em>.</p>
+          object of class <em><a href="#stream-usocket">stream-usocket</a></em>.</p>
         <p><em>element-type</em> is the element type used to construct
-          the
-          associated stream. If it's not specified, the element-type of
-          <em>socket</em>
-          (as used when it was created by the call to socket-listen) is
-          used. </p>
+          the associated stream. If it's not specified, the element-type
+          of <em>socket</em> (as used when it was created by the call
+          to socket-listen) is used. </p>
       </dd>
       <dt class="sym"><span class="function-name"><a name="socket-close"></a>socket-close</span>
         socket</dt>
@@ -170,8 +147,8 @@ pre {
           socket connection.</p>
       </dd>
       <dt class="sym"><span class="function-name"><a
-            name="get-local-name"></a>get-local-name</span>
-        socket =&gt; address, port<br>
+            name="get-local-name"></a>get-local-name</span> socket =&gt;
+        address, port<br>
         <span class="function-name"><a name="get-local-address"></a>get-local-address</span>
         socket =&gt; address<br>
         <span class="function-name"><a name="get-local-port"></a>get-local-port</span>
@@ -180,8 +157,8 @@ pre {
         <p>Returns the local address and/or port information of socket.</p>
       </dd>
       <dt class="sym"><span class="function-name"><a
-            name="get-peer-name"></a>get-peer-name</span>
-        socket =&gt; address, port<br>
+            name="get-peer-name"></a>get-peer-name</span> socket =&gt;
+        address, port<br>
         <span class="function-name"><a name="get-peer-address"></a>get-peer-address</span>
         socket =&gt; address<br>
         <span class="function-name"><a name="get-peer-port"></a>get-peer-port</span>
@@ -196,50 +173,52 @@ pre {
       </dt>
       <dd>
         <p>Send a (unsigned-byte 8) data buffer to a datagram socket,
-          and
-          return the number of bytes sent. (Start from USOCKET 0.5)</p>
+          and return the number of bytes sent. (Start from USOCKET 0.5)</p>
         <p><em>socket</em> should be a <a href="#datagram-usocket"><em>datagram-usocket</em></a>.<br>
           <em>buffer</em> is a Lisp vector, type of <code>(simple-array
             (unsigned-byte 8) *)</code>.<br>
           <em>length</em> is used to tell <a href="#socket-send"><em>socket-send</em></a>
           the actual useful length of data buffer for sending to socket.<br>
           <em>host</em> and <em>port</em> are used for unconnected
-          datagram
-          sockets, for sending to specific destination.<br>
+          datagram sockets, for sending to specific destination.<br>
         </p>
       </dd>
       <dt class="sym"><span class="function-name"><a
-            name="socket-receive"></a>socket-receive</span>
-        socket buffer length<br>
+            name="socket-receive"></a>socket-receive</span> socket
+        buffer length<br>
       </dt>
       <dd>
         <p>Receive data from a datagram socket, and return 4 values: <em>return-buffer</em>,
           <em>return-length</em>, <em>remote-host</em>, and <em>remove-port</em>.
-          If
-          the
-          datagram
-          socket
-          was
-          created
-          by <a href="#socket-connect"><em>socket-connect</em></a>
-          with a <em>timeout</em> keyword argument, this function will
-          block at
-          most that timeout value (in seconds). (Start from USOCKET 0.5)
-        </p>
+          If the datagram socket was created by <a
+            href="#socket-connect"><em>socket-connect</em></a> with a <em>timeout</em>
+          keyword argument, this function will block at most that
+          timeout value (in seconds). (Start from USOCKET 0.5) </p>
         <p><em>socket</em> should be a <a href="#datagram-usocket"><em>datagram-usocket</em></a>.<br>
           <em>buffer</em> is a Lisp vector, type of <code>(simple-array
             (unsigned-byte 8) *)</code>. Using <code>nil</code> here is
-          also
-          allowed, new buffer will be created to hold data.<br>
+          also allowed, new buffer will be created to hold data.<br>
           <em>length</em> is used to specify the length of a exist
-          buffer for
-          receiving at most these data. Using <em>nil</em> here is
-          allowed, and
-          the actual length of <em>buffer</em> will be used; when <em>buffer</em>
-          is also <code>nil</code>, a default maximum length (65507)
-          will be
-          used. <br>
-        </p>
+          buffer for receiving at most these data. Using <em>nil</em>
+          here is allowed, and the actual length of <em>buffer</em>
+          will be used; when <em>buffer</em> is also <code>nil</code>,
+          a default maximum length (65507) will be used.&nbsp;</p>
+      </dd>
+      <dt class="sym"><span class="function-name"><a
+            name="socket-receive"></a>socket-shutdown</span> socket
+        direction<br>
+      </dt>
+      <dd>
+        <p>The socket-shutdown call causes all or part of a full-duplex
+          connection on the socket associated with sockfd to be shut
+          down. If direction is :input, further receptions will be
+          disallowed. If direction is :output, further transmissions
+          will be disallowed. If direction is :io, further receptions
+          and transmissions will be disallowed. (Starting from USOCKET
+          0.6.4) </p>
+        <p><em>socket</em> should be a <a
+href="file:///Users/binghe/Lisp/usocket-web/api-docs.shtml#datagram-usocket"><em>datagram-usocket</em></a>.<br>
+          <em>direction</em> should be either :input, :output or :io.</p>
       </dd>
       <dt class="sym"><span class="function-name"><a
             name="wait-for-input"></a>wait-for-input</span>
@@ -247,44 +226,32 @@ pre {
       </dt>
       <dd>
         <p>Waiting on one or multiple sockets for given time, and
-          returns
-          once some of them are available of reading data. This is like
-          UNIX's
-          "select" function.<br>
+          returns once some of them are available of reading data. This
+          is like UNIX's "select" function.<br>
           <br>
           It returns two values: the first is the list of sockets which
-          are
-          readable (or in case of server sockets acceptable). nil may be
-          returned
-          for this value either when waiting timed out or when it was
-          interrupted
-          (EINTR).&nbsp; The second value is a real number indicating
-          the time
-          remaining within the timeout period or nil if none.<br>
+          are readable (or in case of server sockets acceptable). nil
+          may be returned for this value either when waiting timed out
+          or when it was interrupted (EINTR).&nbsp; The second value is
+          a real number indicating the time remaining within the timeout
+          period or nil if none.<br>
           <br>
           Without the <em>ready-only</em> argument, WAIT-FOR-INPUT will
-          return
-          all sockets in
-          the original list you passed it. This prevents a new list from
-          being
-          consed up. Some users of USOCKET were reluctant to use it if
-          it
-          wouldn't behave that way, expecting it to cost significant
-          performance
-          to do the associated garbage collection.<br>
+          return all sockets in the original list you passed it. This
+          prevents a new list from being consed up. Some users of
+          USOCKET were reluctant to use it if it wouldn't behave that
+          way, expecting it to cost significant performance to do the
+          associated garbage collection.<br>
           <br>
           Without the <em>ready-only</em> arg, you need to check the
-          socket
-          STATE slot for
-          the values documented in <a href="#usocket"><em>usocket</em></a>
-          class.<br>
+          socket STATE slot for the values documented in <a
+            href="#usocket"><em>usocket</em></a> class.<br>
         </p>
       </dd>
       <dt class="sym"><span class="function-name"><a
-            name="socket-server"></a>socket-server</span>
-        host port function &amp;optional arguments &amp;key
-        in-new-thread
-        protocol timeout max-buffer-size element-type reuse-address
+            name="socket-server"></a>socket-server</span> host port
+        function &amp;optional arguments &amp;key in-new-thread protocol
+        timeout max-buffer-size element-type reuse-address
         multi-threading<br>
       </dt>
       <dd>
@@ -294,58 +261,43 @@ pre {
         <p><em>host</em> names a local interface,<br>
           <em>port</em> names a local port,<br>
           <em>function</em> names a function object, which is used to
-          handle
-          TCP or UDP connections, the actual API of this function will
-          be
-          explained later.<br>
+          handle TCP or UDP connections, the actual API of this function
+          will be explained later.<br>
           <em>arguments</em> is a list used for passing extra arguments
-          to
-          user-defined <em>function</em>.<br>
+          to user-defined <em>function</em>.<br>
           <em>in-new-thread</em> is a boolean, default is <code>nil</code>.
           When it's <code>T</code>, the server will be created in a new
-          thread
-          and socket-server returns immediately in current thread.<br>
+          thread and socket-server returns immediately in current
+          thread.<br>
           <em>protocol</em> could be either <code>:stream</code>
-          (default)
-          or <code>:datagram</code>, which decide the socket server is
-          TCP
-          server or UDP server.<br>
+          (default) or <code>:datagram</code>, which decide the socket
+          server is TCP server or UDP server.<br>
           <em>timeout</em> is UDP only, it provides the internal <a
             href="#socket-receive"><em>socket-receive</em></a> call (in
-          UDP event
-          loop of the socket server) a read timeout, default value is 1
-          (second).<br>
+          UDP event loop of the socket server) a read timeout, default
+          value is 1 (second).<br>
           <em>max-buffer-size</em> is UDP only, it's the max UDP data
-          buffer
-          size when handling UDP packets, default value is 65507.<br>
+          buffer size when handling UDP packets, default value is 65507.<br>
           <em>element-type</em> is TCP only, it's element-type of the
-          stream
-          provided for user-defined function,<br>
+          stream provided for user-defined function,<br>
           <em>reuse-address</em> is TCP only, it's a boolean option for
           internal call of socket-listen in the socket server,<br>
           <em>multi-threading</em> is TCP only, it's a boolean, default
-          value
-          is <code>nil</code>. When it's <code>T</code>, each client
-          connection
-          will cause a new thread being created to handle that client,
-          so that
-          the TCP server could handle multiple clients at the same time.
-          (Note:
-          since UDP server is connectionless, it can always handle
-          multiple
-          clients, as long as the handler function run fast enough)<br>
+          value is <code>nil</code>. When it's <code>T</code>, each
+          client connection will cause a new thread being created to
+          handle that client, so that the TCP server could handle
+          multiple clients at the same time. (Note: since UDP server is
+          connectionless, it can always handle multiple clients, as long
+          as the handler function run fast enough)<br>
         </p>
         <p>The handler function for TCP is stream-based. A template
-          function
-          is this one: </p>
+          function is this one: </p>
         <pre>(defun default-tcp-handler (stream) ; null<br>  (declare (type stream stream))<br>  (terpri stream))</pre>
-        <p>Note: 1. you don't need to close the stream as <a
-            href="#socket-server"><em>socket-server</em></a>
+        <p>Note: 1. you don't need to close the stream as <a href="#socket-server"><em>socket-server</em></a>
           will do that for you.
           2. More function arguments can be defined, and these extra
           arguments
-          must be feeded as the optional <em>arguments</em> of <a
-            href="#socket-server"><em>socket-server</em></a>.</p>
+          must be feeded as the optional <em>arguments</em> of <a href="#socket-server"><em>socket-server</em></a>.</p>
         <p>The handler function for UDP is buffer-based, that is,
           you receive a buffer of data as input, and you return another
           buffer
@@ -354,9 +306,7 @@ pre {
         <p>Note: 1. data length is the length of the whole buffer. 2.
           Sometimes you may want to know the client's IP address and
           sending
-          port, these informations are specially bounded on variables <a
-            href="#remote-host"><em>*remote-host*</em></a> and <a
-            href="#remote-port"><em>*remote-port*</em></a> when handler
+          port, these informations are specially bounded on variables <a href="#remote-host"><em>*remote-host*</em></a> and <a href="#remote-port"><em>*remote-port*</em></a> when handler
           function
           is running.</p>
       </dd>
@@ -398,8 +348,7 @@ pre {
           </dd>
         </dl>
       </dd>
-      <dt class="sym"><span class="class-name"><a
-            name="stream-server-usocket">stream-server-usocket</a></span></dt>
+      <dt class="sym"><span class="class-name"><a name="stream-server-usocket">stream-server-usocket</a></span></dt>
       <dd>Parent classes: usocket<br>
         Slots:
         <dl>
@@ -413,8 +362,7 @@ pre {
           </dd>
         </dl>
       </dd>
-      <dt class="sym"><span class="class-name"><a
-            name="datagram-usocket">datagram-usocket
+      <dt class="sym"><span class="class-name"><a name="datagram-usocket">datagram-usocket
             (Start
             from
             USOCKET
@@ -447,8 +395,7 @@ pre {
         <p>The port number to use with socket-listen to make the socket
           listen on a random available port. The port number assigned
           can be
-          retrieved from the returned socket by calling <em><a
-              href="#get-local-port">get-local-port</a></em>.</p>
+          retrieved from the returned socket by calling <em><a href="#get-local-port">get-local-port</a></em>.</p>
       </dd>
       <dt class="sym"><span class="var-name"><a name="remote-host"></a>*remote-host*</span></dt>
       <dd>
@@ -466,8 +413,7 @@ address.
       </dd>
       <dt class="sym"><span class="var-name"><a name="remote-port"></a>*remote-port*</span></dt>
       <dd>
-        <p>Special variable used in <a
-            href="api-docs.shtml#socket-server"><em>socket-server</em></a>'s
+        <p>Special variable used in <a href="api-docs.shtml#socket-server"><em>socket-server</em></a>'s
 handler
 function
 for
@@ -497,8 +443,7 @@ port.
       <dt>... check whether reading from a socket stream will block? </dt>
       <dd>When you want to check <b>one</b> stream for readiness of
         input,
-        call the <a
-          href="http://www.lisp.org/HyperSpec/Body/fun_listen.html">listen</a>
+        call the <a href="http://www.lisp.org/HyperSpec/Body/fun_listen.html">listen</a>
         function on the stream object associated with the socket.<br>
         Example:
         <pre>(listen (usocket:socket-stream your-socket))<br> ==&gt; NIL (if no input is available)<br></pre>
@@ -554,9 +499,9 @@ port.
     <div style="float: left; font-size: x-small; font-weight: bold;">
       Back to <a href="http://common-lisp.net/">Common-lisp.net</a>.
     </div>
-    <div class="check" style="float: right;"> <a
-        href="http://validator.w3.org/check/referer">Valid XHTML 1.0
+    <div class="check" style="float: right;"> <a href="http://validator.w3.org/check/referer">Valid XHTML 1.0
         Strict</a>
     </div>
-  </body>
-</html>
+  
+
+</body></html>

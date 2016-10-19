@@ -55,11 +55,13 @@
 
 
 
+
         description</a>.</p>
     <h2><a name="implementations">Supported implementations</a></h2>
     <p>Currently these implementations are supported:</p>
     <ul>
       <li><a href="http://www.franz.com/products/allegro-common-lisp/">Allegro
+
 
 
           CL</a></li>
@@ -101,6 +103,7 @@
       <p><a href="https://github.com/usocket/usocket">Active development</a>
         is taking place on GitHub. To be kept up to date, please <a
           href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">subscribe
+
 
 
 
@@ -411,25 +414,25 @@
             <td valign="top">Implementation on platforms other than
               SBCL/CCL; API polish<br>
             </td>
-            <td valign="top" bgcolor="#009900">DONE<br>
+            <td bgcolor="#009900" valign="top">DONE<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP 2<br>
+            <td bgcolor="#ff6600" valign="top">WIP 2<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP 2<br>
+            <td bgcolor="#ff6600" valign="top">WIP 2<br>
             </td>
-            <td valign="top" bgcolor="#009900">DONE<br>
+            <td bgcolor="#009900" valign="top">DONE<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff0000">N/A<br>
+            <td bgcolor="#ff0000" valign="top">N/A<br>
             </td>
           </tr>
         </tbody>
@@ -451,7 +454,7 @@
           <th>Release</th>
           <th>Summary</th>
         </tr>
-        <tr><td valign="top">Mar 17, 2016<br></td><td valign="top">0.6.4<br></td><td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b> support for SBCL (and Clozure CL); minimal support for <b>Corman Lisp</b>; minor fixes for LW, SBCL, ECL.<br></td></tr><tr>
+        <tr><td valign="top">Oct 19, 2016<br></td><td valign="top">0.6.5<br></td><td valign="top">Added support for (SOCKET-OPTION :READ-TIMEOUT); fixed SOCKET_SHUTDOWN in LispWorks; fixed loading in LispWorks old versions (5.x, 6.x)<br></td></tr><tr><td valign="top">Mar 17, 2016<br></td><td valign="top">0.6.4<br></td><td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b> support for SBCL (and Clozure CL); minimal support for <b>Corman Lisp</b>; minor fixes for LW, SBCL, ECL.<br></td></tr><tr>
           <td valign="top">May 23, 2015<br>
           </td>
           <td valign="top">0.6.3<br>
