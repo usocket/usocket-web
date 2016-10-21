@@ -56,6 +56,8 @@
 
 
 
+
+
         description</a>.</p>
     <h2><a name="implementations">Supported implementations</a></h2>
     <p>Currently these implementations are supported:</p>
@@ -64,19 +66,24 @@
 
 
 
+
+
           CL</a></li>
       <li><a href="http://common-lisp.net/project/armedbear/">ABCL </a>(ArmedBear)</li>
       <li><a href="http://ccl.clozure.com">Clozure CL</a> (aka OpenMCL)</li>
+      <li><a href="https://github.com/sharplispers/cormanlisp">Corman
+          Lisp</a> (based on :acl-socket module) </li>
       <li>GNU <a href="http://www.clisp.org">CLISP</a></li>
       <li><a href="http://www.cons.org/cmucl">CMUCL</a></li>
       <li><a href="https://common-lisp.net/project/ecl/">ECL</a></li>
       <li><a href="http://www.lispworks.com/products/lispworks.html">LispWorks</a>
         (4.3 and up)</li>
-      <li>Digitool <a href="http://code.google.com/p/mcl/">MCL</a> (5.0
-        and up)</li>
+      <li>Digitool <a href="http://code.google.com/p/mcl/">MCL</a> and
+        RMCL (5.0 and up)</li>
       <li><a href="http://wukix.com/mocl">MOCL</a></li>
       <li><a href="http://www.sbcl.org">SBCL</a></li>
-      <li><a href="http://www.scieneer.com/scl/">Scieneer CL</a></li>
+      <li><a href="http://www.scieneer.com/scl/">Scieneer CL<br>
+        </a></li>
     </ul>
     <h2><a name="community">Community</a></h2>
     <p>This project has started January 2006. There isn't much of a
@@ -103,6 +110,8 @@
       <p><a href="https://github.com/usocket/usocket">Active development</a>
         is taking place on GitHub. To be kept up to date, please <a
           href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">subscribe
+
+
 
 
 
