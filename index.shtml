@@ -58,11 +58,13 @@
 
 
 
+
         description</a>.</p>
     <h2><a name="implementations">Supported implementations</a></h2>
     <p>Currently these implementations are supported:</p>
     <ul>
       <li><a href="http://www.franz.com/products/allegro-common-lisp/">Allegro
+
 
 
 
@@ -110,6 +112,7 @@
       <p><a href="https://github.com/usocket/usocket">Active development</a>
         is taking place on GitHub. To be kept up to date, please <a
           href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">subscribe
+
 
 
 
@@ -463,7 +466,7 @@
           <th>Release</th>
           <th>Summary</th>
         </tr>
-        <tr><td valign="top">Oct 19, 2016<br></td><td valign="top">0.6.5<br></td><td valign="top">Added support for (SOCKET-OPTION :READ-TIMEOUT); fixed SOCKET_SHUTDOWN in LispWorks; fixed loading in LispWorks old versions (5.x, 6.x)<br></td></tr><tr><td valign="top">Mar 17, 2016<br></td><td valign="top">0.6.4<br></td><td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b> support for SBCL (and Clozure CL); minimal support for <b>Corman Lisp</b>; minor fixes for LW, SBCL, ECL.<br></td></tr><tr>
+        <tr><td valign="top">Oct 25, 2016<br></td><td valign="top"><b>0.7.0</b><br></td><td valign="top">Separated client and server packages. Enhanced supports on all LispWorks versions; bugfixes on CLISP, CCL and ECL.<br></td></tr><tr><td valign="top">Oct 19, 2016<br></td><td valign="top">0.6.5<br></td><td valign="top">Added support for (SOCKET-OPTION :READ-TIMEOUT); fixed SOCKET_SHUTDOWN in LispWorks; fixed loading in LispWorks old versions (5.x, 6.x)<br></td></tr><tr><td valign="top">Mar 17, 2016<br></td><td valign="top">0.6.4<br></td><td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b> support for SBCL (and Clozure CL); minimal support for <b>Corman Lisp</b>; minor fixes for LW, SBCL, ECL.<br></td></tr><tr>
           <td valign="top">May 23, 2015<br>
           </td>
           <td valign="top">0.6.3<br>
