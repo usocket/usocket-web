@@ -64,6 +64,7 @@
 
 
 
+
         description</a>.</p>
     <h2><a name="implementations">Supported implementations</a></h2>
     <p>Currently these implementations are supported:</p>
@@ -82,13 +83,13 @@
 
 
 
+
           CL</a></li>
       <li><a href="http://common-lisp.net/project/armedbear/">ABCL </a>(ArmedBear)</li>
+      <li><a href="https://github.com/clasp-developers/clasp">Clasp</a></li>
       <li><a href="http://ccl.clozure.com">Clozure CL</a> (aka OpenMCL)</li>
       <li><a href="https://github.com/sharplispers/cormanlisp">Corman
           Lisp</a> (based on :acl-socket module) </li>
-      <li><a href="https://github.com/clasp-developers/clasp">Clasp</a><br>
-      </li>
       <li>GNU <a href="http://www.clisp.org">CLISP</a></li>
       <li><a href="http://www.cons.org/cmucl">CMUCL</a></li>
       <li><a href="https://common-lisp.net/project/ecl/">ECL</a></li>
@@ -96,13 +97,14 @@
         (4.3 and up)</li>
       <li>Digitool <a href="http://code.google.com/p/mcl/">MCL</a> and
         RMCL (5.0 and up)</li>
+      <li><a href="https://github.com/froggey/Mezzano">Mezzano</a><br>
+      </li>
       <li><a href="http://wukix.com/mocl">MOCL</a></li>
       <li><a href="http://www.sbcl.org">SBCL</a></li>
       <li><a href="http://www.scieneer.com/scl/">Scieneer CL</a></li>
       <li><a href="http://www.symbolics-dks.com">Symbolics</a> Lisp
-        Machine (Open <a
-          href="http://www.bitsavers.org/pdf/symbolics/software/genera_8/">Genera</a>
-        on <a href="https://www.cliki.net/VLM_on_Linux">VLM</a>)<br>
+        Machine (<a
+          href="http://www.bitsavers.org/pdf/symbolics/software/genera_8/">Genera</a>)<br>
       </li>
     </ol>
     <ul>
@@ -132,6 +134,7 @@
       <p><a href="https://github.com/usocket/usocket">Active development</a>
         is taking place on GitHub. To be kept up to date, please <a
           href="http://common-lisp.net/cgi-bin/mailman/listinfo/usocket-devel">subscribe
+
 
 
 
@@ -181,6 +184,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
 
 
 
+
                 <br>
               </a></th>
             <th><a
@@ -199,6 +203,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
               (Meaning streamed tcp traffic on connected sockets.)</td>
             <td><a
 href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Factive-sockets-apis.txt&amp;rev=0&amp;sc=0">Investigate
+
 
 
 
@@ -282,6 +287,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
               Local and remote IP address and port.</td>
             <td><a
 href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Faddress-apis.txt&amp;rev=0&amp;sc=0">Investigate
+
 
 
 
@@ -390,6 +396,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
 
 
 
+
                 interfaces provided</a></td>
             <td class="DONE">DONE</td>
             <td class="DONE">DONE</td>
@@ -447,6 +454,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
             <td rowspan="2">Implement UDP socket support.</td>
             <td><a
                 href="http://trac.common-lisp.net/usocket/wiki/DatagramSockets">Investigate
+
 
 
 
@@ -530,6 +538,15 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           <th>Summary</th>
         </tr>
         <tr>
+          <td valign="top">Dec 23, 2019<br>
+          </td>
+          <td valign="top">0.8.3<br>
+          </td>
+          <td valign="top">New backend: <b>Mezzano</b>; Fixes of
+            WAIT-FOR-INPUT for ECL and the single-socket optimization.<br>
+          </td>
+        </tr>
+        <tr>
           <td valign="top">Jun 11, 2019<br>
           </td>
           <td valign="top">0.8.2<br>
@@ -594,6 +611,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           </td>
           <td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b>
             support for SBCL (and Clozure CL); minimal support for <b>Corman
+
 
 
 
@@ -820,6 +838,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
     <hr>
     <div style="float: left; font-size: x-small; font-weight: bold;">Back
 to
+
 
 
 
