@@ -71,6 +71,7 @@
 
 
 
+
         description</a>.</p>
     <h2><a name="implementations">Supported implementations</a></h2>
     <p>Currently these implementations are supported:</p>
@@ -78,6 +79,7 @@
     </ul>
     <ol>
       <li><a href="http://www.franz.com/products/allegro-common-lisp/">Allegro
+
 
 
 
@@ -166,6 +168,7 @@
 
 
 
+
           to the development mailing list</a>. To use the latest
         development version, make sure you have <a
           href="http://git-scm.com/">git</a> installed and execute this
@@ -174,8 +177,8 @@
       <p>Please send patches, bug reports and suggestions to the
         development mailing list address given above. The table below
         indicates the current state of development. </p>
-      <table style="font-size: small;" rules="all" cellpadding="3"
-        border="1">
+      <table style="font-size: small;" rules="all" border="1"
+        cellpadding="3">
         <caption style="font-weight: bold; font-size: large;">Status for
           the currently targeted backends</caption> <thead
           class="roadmap-head"> <tr>
@@ -210,6 +213,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
 
 
 
+
                 <br>
               </a></th>
             <th><a
@@ -228,6 +232,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
               (Meaning streamed tcp traffic on connected sockets.)</td>
             <td><a
 href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Factive-sockets-apis.txt&amp;rev=0&amp;sc=0">Investigate
+
 
 
 
@@ -318,6 +323,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
               Local and remote IP address and port.</td>
             <td><a
 href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2Fusocket%2Ftrunk%2Fnotes%2Faddress-apis.txt&amp;rev=0&amp;sc=0">Investigate
+
 
 
 
@@ -440,6 +446,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
 
 
 
+
                 interfaces provided</a></td>
             <td class="DONE">DONE</td>
             <td class="DONE">DONE</td>
@@ -516,6 +523,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
 
 
 
+
                 API's provided</a></td>
             <td class="DONE">DONE</td>
             <td class="DONE">DONE</td>
@@ -547,24 +555,24 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
             <td valign="top">Implementation on platforms other than
               SBCL/CCL; API polish<br>
             </td>
-            <td valign="top" bgcolor="#009900">DONE<br>
+            <td bgcolor="#009900" valign="top">DONE<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP 2<br>
+            <td bgcolor="#ff6600" valign="top">WIP 2<br>
             </td>
-            <td valign="top" bgcolor="#009900" align="center">DONE</td>
-            <td valign="top" bgcolor="#009900">DONE<br>
+            <td bgcolor="#009900" align="center" valign="top">DONE</td>
+            <td bgcolor="#009900" valign="top">DONE<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff6600">WIP<br>
+            <td bgcolor="#ff6600" valign="top">WIP<br>
             </td>
-            <td valign="top" bgcolor="#ff0000">N/A<br>
+            <td bgcolor="#ff0000" valign="top">N/A<br>
             </td>
           </tr>
         </tbody>
@@ -585,6 +593,15 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           <th>Date</th>
           <th>Release</th>
           <th>Summary</th>
+        </tr>
+        <tr>
+          <td valign="top">Oct 24, 2025<br>
+          </td>
+          <td valign="top">0.8.9<br>
+          </td>
+          <td valign="top">Cumulative bugfixes for LispWorks, Clozure CL
+            and CLISP, etc.<br>
+          </td>
         </tr>
         <tr>
           <td valign="top">Jul 23, 2024<br>
@@ -705,6 +722,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
           </td>
           <td valign="top">New API: <b>SOCKET-SHUTDOWN</b>; added <b>IPv6</b>
             support for SBCL (and Clozure CL); minimal support for <b>Corman
+
 
 
 
@@ -938,6 +956,7 @@ href="http://common-lisp.net/websvn/filedetails.php?repname=usocket&amp;path=%2F
     <hr>
     <div style="float: left; font-size: x-small; font-weight: bold;">Back
 to
+
 
 
 
